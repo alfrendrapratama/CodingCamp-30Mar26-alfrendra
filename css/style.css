@@ -1,0 +1,371 @@
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --text-primary: #f0f0f0;
+    --text-secondary: #d1d1d1;
+    --accent-color: #8A2BE2;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a0f35, #0f0c29, #24243e);
+    color: var(--text-primary);
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+/* TITLE */
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* GLASS STYLE */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+/* CARD */
+.card {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* CENTER */
+.center {
+    text-align: center;
+}
+
+/* BALANCE */
+.label {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.balance {
+    font-size: 32px;
+    margin-top: 5px;
+}
+
+/* FORM */
+.form-group {
+    margin-bottom: 15px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--glass-border);
+    background: rgba(0,0,0,0.2);
+    color: white;
+}
+
+select option {
+    color: black;
+    background: white;
+}
+
+input:focus, select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+/* BUTTON */
+.btn-main {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: var(--accent-color);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-main:hover {
+    background: #6a1eae;
+}
+
+/* BOTTOM GRID */
+.bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* TRANSACTION */
+.transaction {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.transaction small {
+    color: var(--text-secondary);
+}
+
+.right {
+    text-align: right;
+}
+
+.price {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* DELETE BUTTON */
+.btn-delete {
+    background: #e74c3c;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
+
+/* CHART */
+.chart-placeholder {
+    margin: 20px auto 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #2ecc71 0% 70%,
+        #f39c12 70% 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.header .title {
+    margin-bottom: 0;
+    text-align: left;
+}
+
+/* THEME TOGGLE BUTTON */
+.btn-theme {
+    padding: 8px 16px;
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    background: var(--glass-bg);
+    color: var(--text-primary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.btn-theme:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+/* ERROR MESSAGE */
+.error-message {
+    display: none;
+    background: rgba(231, 76, 60, 0.2);
+    border: 1px solid #e74c3c;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    color: #ff6b6b;
+    font-size: 13px;
+}
+
+.error-message.visible {
+    display: block;
+}
+
+/* SORT BAR */
+.sort-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+}
+
+.sort-bar label {
+    font-size: 13px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.sort-bar select {
+    width: auto;
+    flex: 1;
+}
+
+/* EMPTY STATE */
+.empty-state {
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+/* CHART WRAPPER */
+.chart-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 260px;
+    margin: 20px auto 0;
+}
+
+.chart-fallback {
+    color: var(--text-secondary);
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+/* TRANSACTION LIST SCROLL */
+#transaction-list {
+    max-height: 320px;
+    overflow-y: auto;
+}
+
+/* LIGHT THEME */
+body.light {
+    --glass-bg: rgba(0, 0, 0, 0.06);
+    --glass-border: rgba(0, 0, 0, 0.12);
+    --text-primary: #1a1a2e;
+    --text-secondary: #555;
+    background: linear-gradient(135deg, #e8e0f5, #dce8f5, #e0e8f5);
+}
+
+body.light input,
+body.light select {
+    background: rgba(255,255,255,0.7);
+    color: #1a1a2e;
+    border-color: rgba(0,0,0,0.15);
+}
+
+body.light select option {
+    background: white;
+    color: #1a1a2e;
+}
+
+/* BALANCE OVER BUDGET */
+.balance.over-budget {
+    color: #e74c3c;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .bottom {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        margin: 15px auto;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .balance {
+        font-size: 24px;
+    }
+
+    .sort-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sort-bar select {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1100px;
+    }
+}
+
+/* FORM GROUP LABEL */
+.form-group label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: var(--text-secondary);
+}
+
+/* TRANSACTION LIST — padding so content doesn't clip against scrollbar */
+#transaction-list {
+    padding-right: 4px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) transparent;
+}
+
+/* CUSTOM SCROLLBAR (webkit) */
+#transaction-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+#transaction-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#transaction-list::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 4px;
+}
+
+/* TRANSACTION — align-items so delete button doesn't stretch on long names */
+.transaction {
+    align-items: flex-start;
+}
+
+/* DELETE BUTTON HOVER */
+.btn-delete:hover {
+    background: #c0392b;
+}
+
+/* SORT BAR — fix double padding when .card and .sort-bar are both applied */
+.card.sort-bar {
+    padding: 12px 20px;
+}
+
+/* RESPONSIVE — very small screens (320px) */
+@media (max-width: 360px) {
+    .card {
+        padding: 14px;
+    }
+}
